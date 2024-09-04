@@ -4,13 +4,13 @@ import { fetchData } from "@/assets/getData";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import AllCards from "./allCards";
-
+export type AnimeElement=JSX.Element
 
 
 let page =2
 const Loader = () => {
   const { ref, inView } = useInView();
-  const [animeData, setAnimeData] = useState<AnimeProp[]>([]);
+  const [animeData, setAnimeData] = useState<AnimeElement[]>([]);
 
   const getData = async () => {
     const res = await fetchData(page);
